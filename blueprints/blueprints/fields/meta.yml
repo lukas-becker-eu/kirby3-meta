@@ -1,0 +1,36 @@
+# site/plugins/kirby3-meta/blueprints/fields/meta.yml
+
+type: group
+fields:
+
+  metaTitle:
+    label: Titel
+    type: text
+    placeholder: "{{ page.title }} | {{ site.title }}"
+
+  metaDescription:
+    label: Beschreibung
+    type: textarea
+    buttons: false
+    size: small
+
+  metaRobotsIndex:
+    label: Index
+    type: select
+    default: noindex
+    options:
+      index: Index
+      noindex: Noindex
+    width: 1/2
+
+  metaRobotsFollow:
+    label: Follow
+    type: select
+    default: nofollow
+    options:
+      follow: Follow
+      nofollow: Nofollow
+    width: 1/2
+
+  #notranslate
+  #max-image-preview:large

@@ -1,0 +1,33 @@
+{
+  "name": "candyblue/kirby3-meta",
+  "description": "A new plugin for Kirby 3 powered websites",
+  "type": "kirby-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "candyblue",
+      "email": "hi@candyblue.agency",
+      "homepage": "https://candyblue.agency"
+    }
+  ],
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/candyblue"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/wearecandyblue/dashboard"
+    },
+    {
+      "type": "other",
+      "url": "https://www.paypal.me/wearecandyblue"
+    }
+  ],
+  "require": {
+    "getkirby/composer-installer": "^1.1"
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
