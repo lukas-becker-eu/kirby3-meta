@@ -1,4 +1,4 @@
 label: Meta
 icon: search
 fields:
-meta: fields/meta
+  meta: fields/meta
