@@ -4,7 +4,8 @@
 
 Kirby::plugin('lukasbecker/kirby3-meta', [
   'blueprints' => [
-    'fields/meta' => __DIR__ . '/blueprints/fields/meta.yml'
+    'fields/meta' => __DIR__ . '/blueprints/fields/meta.yml',
+    'tabs/meta' => __DIR__ . '/blueprints/tabs/meta.yml'
   ],
   'snippets' => [
     'head-meta' => __DIR__ . '/snippets/meta.php'
