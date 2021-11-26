@@ -6,7 +6,7 @@ fields:
   metaTitle:
     label: Titel
     type: text
-    placeholder: "{{ page.title }} | {{ site.title }}"
+    placeholder: "{{ page.title }} | {{ site.url }}"
 
   metaDescription:
     label: Beschreibung

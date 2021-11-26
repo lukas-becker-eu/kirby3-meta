@@ -16,17 +16,18 @@ Kirby::plugin('lukasbecker/kirby3-meta', [
         $title = '';
         $separator = ' | ';
         if ($this->metaTitle()->isNotEmpty()) {
-          $title = strip_tags(kt($this->metaTitle()));
+          $title = Str::unhtml($this->metaTitle()->kt());
         }
         else {
           if (!$this->isHomePage()) {
-            $title .= $this->title()->isNotEmpty() ?? $this->title() . $separator;
+            $title .= r($this->title()->isNotEmpty(), $this->title() . $separator);
 
             foreach ($this->parents() as $p) {
-              $title .= $p->title()->isNotEmpty() ?? $p->title() . $separator;
+              $title .= r($p->title()->isNotEmpty(), $p->title() . $separator) ;
             }
           }
-          $title .= $this->site()->title()->isNotEnpty() ?? $this->site()->title();
+
+          $title .= preg_replace('#^[^:/.]*[:/]+#i', '', preg_replace('{/$}', '', urldecode($this->site()->url())));
         }
         return Html::tag('title', $title);
       }
@@ -34,7 +35,7 @@ Kirby::plugin('lukasbecker/kirby3-meta', [
     'getMetaDescription' => function () {
       $description = $this->metaDescription();
       if($description->isNotEmpty()) {
-        $description = strip_tags($description->kt());
+        $description = Str::unhtml($description->kt());
         return Html::tag('meta', null, ['name' => 'description', 'content' => $description]);
       }
     },
